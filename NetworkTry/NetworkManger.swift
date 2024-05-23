@@ -122,7 +122,7 @@ struct NetworkManager {
         print("outside")
         // Decode the JSON response into the expected type
         let result = try JSONDecoder().decode(U.self, from: data)
-        
+        print("\(result)..")
         return result
     }
     

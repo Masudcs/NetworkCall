@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AD5A2C62BFED646004C16CE /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5A2C52BFED646004C16CE /* UserDetailView.swift */; };
+		0AD5A2C82BFED69F004C16CE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5A2C72BFED69F004C16CE /* UserModel.swift */; };
+		0AD5A2CA2BFED894004C16CE /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5A2C92BFED894004C16CE /* AddUserView.swift */; };
 		FCC391852BFDB9210062075D /* NetworkTryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC391842BFDB9210062075D /* NetworkTryApp.swift */; };
-		FCC391872BFDB9210062075D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC391862BFDB9210062075D /* ContentView.swift */; };
+		FCC391872BFDB9210062075D /* UserListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC391862BFDB9210062075D /* UserListScreen.swift */; };
 		FCC391892BFDB9230062075D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC391882BFDB9230062075D /* Assets.xcassets */; };
 		FCC3918C2BFDB9230062075D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC3918B2BFDB9230062075D /* Preview Assets.xcassets */; };
 		FCC391932BFDBAB60062075D /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC391922BFDBAB60062075D /* NetworkManger.swift */; };
-		FCC391952BFDBBAE0062075D /* RandomJokesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC391942BFDBBAE0062075D /* RandomJokesViewModel.swift */; };
+		FCC391952BFDBBAE0062075D /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC391942BFDBBAE0062075D /* UserViewModel.swift */; };
 		FCC391972BFDBBE60062075D /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC391962BFDBBE60062075D /* JokeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AD5A2C52BFED646004C16CE /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		0AD5A2C72BFED69F004C16CE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		0AD5A2C92BFED894004C16CE /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
 		FCC391812BFDB9210062075D /* NetworkTry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkTry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC391842BFDB9210062075D /* NetworkTryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTryApp.swift; sourceTree = "<group>"; };
-		FCC391862BFDB9210062075D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FCC391862BFDB9210062075D /* UserListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListScreen.swift; sourceTree = "<group>"; };
 		FCC391882BFDB9230062075D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCC3918B2BFDB9230062075D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FCC391922BFDBAB60062075D /* NetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
-		FCC391942BFDBBAE0062075D /* RandomJokesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokesViewModel.swift; sourceTree = "<group>"; };
+		FCC391942BFDBBAE0062075D /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		FCC391962BFDBBE60062075D /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,12 +64,15 @@
 			isa = PBXGroup;
 			children = (
 				FCC391842BFDB9210062075D /* NetworkTryApp.swift */,
-				FCC391862BFDB9210062075D /* ContentView.swift */,
+				FCC391862BFDB9210062075D /* UserListScreen.swift */,
 				FCC391882BFDB9230062075D /* Assets.xcassets */,
 				FCC3918A2BFDB9230062075D /* Preview Content */,
 				FCC391922BFDBAB60062075D /* NetworkManger.swift */,
-				FCC391942BFDBBAE0062075D /* RandomJokesViewModel.swift */,
+				FCC391942BFDBBAE0062075D /* UserViewModel.swift */,
 				FCC391962BFDBBE60062075D /* JokeModel.swift */,
+				0AD5A2C52BFED646004C16CE /* UserDetailView.swift */,
+				0AD5A2C72BFED69F004C16CE /* UserModel.swift */,
+				0AD5A2C92BFED894004C16CE /* AddUserView.swift */,
 			);
 			path = NetworkTry;
 			sourceTree = "<group>";
@@ -147,10 +156,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCC391932BFDBAB60062075D /* NetworkManger.swift in Sources */,
-				FCC391872BFDB9210062075D /* ContentView.swift in Sources */,
+				0AD5A2C82BFED69F004C16CE /* UserModel.swift in Sources */,
+				FCC391872BFDB9210062075D /* UserListScreen.swift in Sources */,
 				FCC391972BFDBBE60062075D /* JokeModel.swift in Sources */,
-				FCC391952BFDBBAE0062075D /* RandomJokesViewModel.swift in Sources */,
+				FCC391952BFDBBAE0062075D /* UserViewModel.swift in Sources */,
+				0AD5A2C62BFED646004C16CE /* UserDetailView.swift in Sources */,
 				FCC391852BFDB9210062075D /* NetworkTryApp.swift in Sources */,
+				0AD5A2CA2BFED894004C16CE /* AddUserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
