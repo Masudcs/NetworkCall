@@ -48,7 +48,18 @@ struct UserListScreen: View {
                 }
             }
             .alert(isPresented: $viewModel.isError) {
-                Alert(title: Text("Error"), message: Text(viewModel.errorMessage), dismissButton: .default(Text("OK")))
+                Alert(
+                    title: Text("Error"),
+                    message: Text(viewModel.errorMessage),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
+            .alert(isPresented: $viewModel.isSuccess) {
+                Alert(
+                    title: Text("Success"),
+                    message: Text("User Successfully delete"),
+                    dismissButton: .default(Text("OK"))
+                )
             }
             .sheet(isPresented: $showAddUser) {
                 AddUserView(viewModel: viewModel)

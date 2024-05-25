@@ -42,7 +42,7 @@ struct NetworkManager {
         let (data, response) = try await URLSession.shared.data(for: request)
         
         // Check the response status code
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+        guard (200 ... 299).contains((response as? HTTPURLResponse)?.statusCode ?? 500) else {
             throw NetworkError.badServerResponse
         }
         
@@ -79,10 +79,12 @@ struct NetworkManager {
         }
         
         // Perform the network request
+        print("before network request...")
         let (_, response) = try await URLSession.shared.data(for: request)
         
         // Check the response status code
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+        print("After network request...")
+        guard (200 ... 299).contains((response as? HTTPURLResponse)?.statusCode ?? 500) else {
             throw NetworkError.badServerResponse
         }
         print("Come last")
@@ -154,7 +156,7 @@ struct NetworkManager {
         let (data, response) = try await URLSession.shared.data(for: request)
         
         // Check the response status code
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+        guard (200 ... 299).contains((response as? HTTPURLResponse)?.statusCode ?? 500) else {
             throw NetworkError.badServerResponse
         }
         

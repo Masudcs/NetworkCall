@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A69D11F2C021EEE00D1CBB8 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D11E2C021EEE00D1CBB8 /* Env.swift */; };
+		0A69D1222C024BBC00D1CBB8 /* IRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D1212C024BBC00D1CBB8 /* IRepository.swift */; };
+		0A69D1242C024CCC00D1CBB8 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D1232C024CCC00D1CBB8 /* UserRepository.swift */; };
 		0AD5A2C62BFED646004C16CE /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5A2C52BFED646004C16CE /* UserDetailView.swift */; };
 		0AD5A2C82BFED69F004C16CE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5A2C72BFED69F004C16CE /* UserModel.swift */; };
 		0AD5A2CA2BFED894004C16CE /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5A2C92BFED894004C16CE /* AddUserView.swift */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		0A69D11E2C021EEE00D1CBB8 /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		0A69D1202C021F7800D1CBB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0A69D1212C024BBC00D1CBB8 /* IRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRepository.swift; sourceTree = "<group>"; };
+		0A69D1232C024CCC00D1CBB8 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		0AD5A2C52BFED646004C16CE /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		0AD5A2C72BFED69F004C16CE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0AD5A2C92BFED894004C16CE /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
@@ -85,7 +89,9 @@
 		0A69D11B2C019E3400D1CBB8 /* Networks */ = {
 			isa = PBXGroup;
 			children = (
+				0A69D1212C024BBC00D1CBB8 /* IRepository.swift */,
 				FCC391922BFDBAB60062075D /* NetworkManger.swift */,
+				0A69D1232C024CCC00D1CBB8 /* UserRepository.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -216,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A69D1242C024CCC00D1CBB8 /* UserRepository.swift in Sources */,
 				FCC391932BFDBAB60062075D /* NetworkManger.swift in Sources */,
 				0AD5A2C82BFED69F004C16CE /* UserModel.swift in Sources */,
 				FCC391872BFDB9210062075D /* UserListScreen.swift in Sources */,
@@ -225,6 +232,7 @@
 				0AD5A2C62BFED646004C16CE /* UserDetailView.swift in Sources */,
 				FCC391852BFDB9210062075D /* NetworkTryApp.swift in Sources */,
 				0AD5A2CA2BFED894004C16CE /* AddUserView.swift in Sources */,
+				0A69D1222C024BBC00D1CBB8 /* IRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
