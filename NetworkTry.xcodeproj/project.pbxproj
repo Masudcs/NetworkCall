@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A69D11F2C021EEE00D1CBB8 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D11E2C021EEE00D1CBB8 /* Env.swift */; };
 		0AD5A2C62BFED646004C16CE /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5A2C52BFED646004C16CE /* UserDetailView.swift */; };
 		0AD5A2C82BFED69F004C16CE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5A2C72BFED69F004C16CE /* UserModel.swift */; };
 		0AD5A2CA2BFED894004C16CE /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5A2C92BFED894004C16CE /* AddUserView.swift */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A69D11E2C021EEE00D1CBB8 /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
+		0A69D1202C021F7800D1CBB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0AD5A2C52BFED646004C16CE /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		0AD5A2C72BFED69F004C16CE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0AD5A2C92BFED894004C16CE /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
@@ -44,6 +47,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A69D1172C019DB600D1CBB8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0A69D1182C019DE400D1CBB8 /* Components */,
+				FCC391862BFDB9210062075D /* UserListScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0A69D1182C019DE400D1CBB8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0AD5A2C92BFED894004C16CE /* AddUserView.swift */,
+				0AD5A2C52BFED646004C16CE /* UserDetailView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0A69D1192C019E0200D1CBB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCC391962BFDBBE60062075D /* JokeModel.swift */,
+				0AD5A2C72BFED69F004C16CE /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A69D11A2C019E2200D1CBB8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FCC391942BFDBBAE0062075D /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A69D11B2C019E3400D1CBB8 /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				FCC391922BFDBAB60062075D /* NetworkManger.swift */,
+			);
+			path = Networks;
+			sourceTree = "<group>";
+		};
+		0A69D11C2C021EBD00D1CBB8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0A69D11D2C021EC700D1CBB8 /* Helpers */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0A69D11D2C021EC700D1CBB8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0A69D11E2C021EEE00D1CBB8 /* Env.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		FCC391782BFDB9210062075D = {
 			isa = PBXGroup;
 			children = (
@@ -63,16 +125,15 @@
 		FCC391832BFDB9210062075D /* NetworkTry */ = {
 			isa = PBXGroup;
 			children = (
+				0A69D1202C021F7800D1CBB8 /* Info.plist */,
+				0A69D11C2C021EBD00D1CBB8 /* Resources */,
+				0A69D11B2C019E3400D1CBB8 /* Networks */,
+				0A69D11A2C019E2200D1CBB8 /* ViewModel */,
+				0A69D1192C019E0200D1CBB8 /* Model */,
+				0A69D1172C019DB600D1CBB8 /* Screens */,
 				FCC391842BFDB9210062075D /* NetworkTryApp.swift */,
-				FCC391862BFDB9210062075D /* UserListScreen.swift */,
 				FCC391882BFDB9230062075D /* Assets.xcassets */,
 				FCC3918A2BFDB9230062075D /* Preview Content */,
-				FCC391922BFDBAB60062075D /* NetworkManger.swift */,
-				FCC391942BFDBBAE0062075D /* UserViewModel.swift */,
-				FCC391962BFDBBE60062075D /* JokeModel.swift */,
-				0AD5A2C52BFED646004C16CE /* UserDetailView.swift */,
-				0AD5A2C72BFED69F004C16CE /* UserModel.swift */,
-				0AD5A2C92BFED894004C16CE /* AddUserView.swift */,
 			);
 			path = NetworkTry;
 			sourceTree = "<group>";
@@ -158,6 +219,7 @@
 				FCC391932BFDBAB60062075D /* NetworkManger.swift in Sources */,
 				0AD5A2C82BFED69F004C16CE /* UserModel.swift in Sources */,
 				FCC391872BFDB9210062075D /* UserListScreen.swift in Sources */,
+				0A69D11F2C021EEE00D1CBB8 /* Env.swift in Sources */,
 				FCC391972BFDBBE60062075D /* JokeModel.swift in Sources */,
 				FCC391952BFDBBAE0062075D /* UserViewModel.swift in Sources */,
 				0AD5A2C62BFED646004C16CE /* UserDetailView.swift in Sources */,
@@ -298,6 +360,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NetworkTry/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NetworkTry/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -326,6 +389,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NetworkTry/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NetworkTry/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
