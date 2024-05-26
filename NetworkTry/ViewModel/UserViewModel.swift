@@ -12,14 +12,20 @@ import SwiftUI
 class UserViewModel: ObservableObject {
     private let userRepository: IRepository
 
+    @Published var state: UIState = .loading
     @Published var users: [User]? = []
-    @Published var posts: [PostModel]? = []
+    // @Published var posts: [PostModel]? = []
     @Published var errorMessage: String = ""
     @Published var isError: Bool = false
     @Published var isSuccess: Bool = false
 
-    init(userRepository: IRepository = UserRepository()) {
+    init(
+        userRepository: IRepository = UserRepository(
+            cache: DiskCache<[User]>(filename: "user_list", expirationInterval: 30 * 5)
+        )
+    ) {
         self.userRepository = userRepository
+        NetworkMonitor.shared.startMonitoring()
     }
 
     func fetchUsers() async {
@@ -29,11 +35,14 @@ class UserViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self.users = user
             }
+
+            self.state = .success
         } catch {
             print(error)
-            self.isError = true
             self.errorMessage = error.localizedDescription
+            self.state = .failure(error: self.errorMessage)
         }
+
     }
 
     func createUser(
@@ -100,6 +109,12 @@ class UserViewModel: ObservableObject {
             self.isError = true
             self.errorMessage = error.localizedDescription
         }
+    }
+
+    func retry() async {
+        self.state = .loading
+        self.users?.removeAll()
+        await self.fetchUsers()
     }
 
 //    func fetchUsers() async {

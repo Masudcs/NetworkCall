@@ -13,20 +13,44 @@ struct UserListScreen: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(viewModel.users ?? [], id: \.id) { user in
-                    NavigationLink(destination: UserDetailView(user: user, viewModel: viewModel)) {
-                        HStack {
-                            Text(user.name)
-                            Text("\(user.id)")
+            ZStack {
+                switch viewModel.state {
+                case .loading:
+                    ProgressView()
+
+                case .failure(let error):
+                    VStack {
+                        Text("\(error)")
+                            .padding()
+
+                        Button {
+                            Task {
+                                await viewModel.retry()
+                            }
+                        } label: {
+                            Text("Retry")
                         }
                     }
-                }
-                .onDelete { indexSet in
-                    for index in indexSet {
-                        Task {
-                            await viewModel.deleteUser(index)
-                            await viewModel.fetchUsers()
+                    .padding()
+
+                case .success:
+                    List {
+                        ForEach(viewModel.users ?? [], id: \.id) { user in
+                            NavigationLink(destination: UserDetailView(user: user, viewModel: viewModel)) {
+                                VStack(alignment: .leading) {
+                                    Text(user.name)
+                                    Text("UserID: \(user.id)")
+                                        .font(.callout)
+                                }
+                            }
+                        }
+                        .onDelete { indexSet in
+                            for index in indexSet {
+                                Task {
+                                    await viewModel.deleteUser(index)
+                                    await viewModel.fetchUsers()
+                                }
+                            }
                         }
                     }
                 }

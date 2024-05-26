@@ -10,6 +10,12 @@
 		0A69D11F2C021EEE00D1CBB8 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D11E2C021EEE00D1CBB8 /* Env.swift */; };
 		0A69D1222C024BBC00D1CBB8 /* IRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D1212C024BBC00D1CBB8 /* IRepository.swift */; };
 		0A69D1242C024CCC00D1CBB8 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D1232C024CCC00D1CBB8 /* UserRepository.swift */; };
+		0A69D1262C02ED6600D1CBB8 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D1252C02ED6600D1CBB8 /* NetworkMonitor.swift */; };
+		0A69D1292C03075400D1CBB8 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D1282C03075400D1CBB8 /* Cache.swift */; };
+		0A69D12B2C03076F00D1CBB8 /* CacheEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D12A2C03076F00D1CBB8 /* CacheEntity.swift */; };
+		0A69D12D2C03079C00D1CBB8 /* CacheImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D12C2C03079C00D1CBB8 /* CacheImplementation.swift */; };
+		0A69D12F2C0307BB00D1CBB8 /* KeysTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D12E2C0307BB00D1CBB8 /* KeysTracker.swift */; };
+		0A69D1312C030EC200D1CBB8 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D1302C030EC200D1CBB8 /* UIState.swift */; };
 		0AD5A2C62BFED646004C16CE /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5A2C52BFED646004C16CE /* UserDetailView.swift */; };
 		0AD5A2C82BFED69F004C16CE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5A2C72BFED69F004C16CE /* UserModel.swift */; };
 		0AD5A2CA2BFED894004C16CE /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5A2C92BFED894004C16CE /* AddUserView.swift */; };
@@ -27,6 +33,12 @@
 		0A69D1202C021F7800D1CBB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0A69D1212C024BBC00D1CBB8 /* IRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRepository.swift; sourceTree = "<group>"; };
 		0A69D1232C024CCC00D1CBB8 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		0A69D1252C02ED6600D1CBB8 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		0A69D1282C03075400D1CBB8 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		0A69D12A2C03076F00D1CBB8 /* CacheEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheEntity.swift; sourceTree = "<group>"; };
+		0A69D12C2C03079C00D1CBB8 /* CacheImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImplementation.swift; sourceTree = "<group>"; };
+		0A69D12E2C0307BB00D1CBB8 /* KeysTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysTracker.swift; sourceTree = "<group>"; };
+		0A69D1302C030EC200D1CBB8 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		0AD5A2C52BFED646004C16CE /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		0AD5A2C72BFED69F004C16CE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0AD5A2C92BFED894004C16CE /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
@@ -74,6 +86,7 @@
 			children = (
 				FCC391962BFDBBE60062075D /* JokeModel.swift */,
 				0AD5A2C72BFED69F004C16CE /* UserModel.swift */,
+				0A69D1302C030EC200D1CBB8 /* UIState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -89,6 +102,7 @@
 		0A69D11B2C019E3400D1CBB8 /* Networks */ = {
 			isa = PBXGroup;
 			children = (
+				0A69D1272C02F12C00D1CBB8 /* Cache */,
 				0A69D1212C024BBC00D1CBB8 /* IRepository.swift */,
 				FCC391922BFDBAB60062075D /* NetworkManger.swift */,
 				0A69D1232C024CCC00D1CBB8 /* UserRepository.swift */,
@@ -110,6 +124,18 @@
 				0A69D11E2C021EEE00D1CBB8 /* Env.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0A69D1272C02F12C00D1CBB8 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				0A69D1252C02ED6600D1CBB8 /* NetworkMonitor.swift */,
+				0A69D1282C03075400D1CBB8 /* Cache.swift */,
+				0A69D12A2C03076F00D1CBB8 /* CacheEntity.swift */,
+				0A69D12C2C03079C00D1CBB8 /* CacheImplementation.swift */,
+				0A69D12E2C0307BB00D1CBB8 /* KeysTracker.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		FCC391782BFDB9210062075D = {
@@ -223,10 +249,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A69D1242C024CCC00D1CBB8 /* UserRepository.swift in Sources */,
+				0A69D1262C02ED6600D1CBB8 /* NetworkMonitor.swift in Sources */,
 				FCC391932BFDBAB60062075D /* NetworkManger.swift in Sources */,
 				0AD5A2C82BFED69F004C16CE /* UserModel.swift in Sources */,
+				0A69D12F2C0307BB00D1CBB8 /* KeysTracker.swift in Sources */,
 				FCC391872BFDB9210062075D /* UserListScreen.swift in Sources */,
+				0A69D12B2C03076F00D1CBB8 /* CacheEntity.swift in Sources */,
+				0A69D1312C030EC200D1CBB8 /* UIState.swift in Sources */,
 				0A69D11F2C021EEE00D1CBB8 /* Env.swift in Sources */,
+				0A69D12D2C03079C00D1CBB8 /* CacheImplementation.swift in Sources */,
+				0A69D1292C03075400D1CBB8 /* Cache.swift in Sources */,
 				FCC391972BFDBBE60062075D /* JokeModel.swift in Sources */,
 				FCC391952BFDBBAE0062075D /* UserViewModel.swift in Sources */,
 				0AD5A2C62BFED646004C16CE /* UserDetailView.swift in Sources */,

@@ -8,12 +8,50 @@
 import Foundation
 
 class UserRepository: IRepository {
+    private let cache: DiskCache<[User]>
+    private var isFirstTime = true
+
+    init(
+        cache: DiskCache<[User]>
+    ) {
+        self.cache = cache
+    }
+
     func fetchUsers() async throws -> [User] {
-        do {
-            return try await NetworkManager().fetch(from: "https://gorest.co.in/public/v2/users", header: ["Authorization": "Bearer \(Env.bearToken)"])
-        } catch {
-            throw error
+        if isFirstTime {
+            isFirstTime = false
+
+            do {
+                try await cache.loadFromDisk()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
+
+        var users: [User] = []
+        if shouldLoadFromNetwork() {
+            do {
+                users = try await NetworkManager().fetch(from: "https://gorest.co.in/public/v2/users", header: ["Authorization": "Bearer \(Env.bearToken)"])
+
+                await cache.removeValue(forKey: "https://gorest.co.in/public/v2/users")
+                await cache.setValue(users, forKey: "https://gorest.co.in/public/v2/users")
+
+                print("CACHE SET")
+
+                try await cache.saveToDisk()
+
+                print("CACHE SET TO DISK")
+
+            } catch {
+                throw error
+            }
+        } else {
+            users = await cache.value(forKey: "https://gorest.co.in/public/v2/users") ?? []
+
+            print("CACHE HIT")
+        }
+
+        return users
     }
 
     func createUser(name: String, gender: String, email: String, status: String) async throws -> User {
@@ -63,5 +101,9 @@ class UserRepository: IRepository {
             print("error UserRepository..")
             throw error
         }
+    }
+
+    private func shouldLoadFromNetwork() -> Bool {
+        return NetworkMonitor.shared.isReachable
     }
 }
